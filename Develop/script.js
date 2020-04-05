@@ -9,21 +9,35 @@ speChar= ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", 
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-var writePassword = function() {
+function writePassword() {
+
+  var password = '';
+
+  var pwText = document.querySelector("#password");
+
+  pwText.value = password;
+
   var length = parseInt(window.prompt("How long would you like your password to be? Enter a number between 8 and 128."));
+
     // alert user if nothing is entered into password length prompt
     if (!length) {
       window.alert("Your password must have a length between 8 and 128. Please try again.");
     }
+
     else if (length < 8 || length > 128) {
       length = parseInt(window.prompt("You must choose between 8 and 128"));
     }
+
     // series of confirmations for each of the four types of characters
     else {
       var confirmSpec = window.confirm("Would you like your password to contain special characters?");
+
       var confirmNum = window.confirm("Would you like your password to contain numerical characters?");
+
       var confirmLow = window.confirm("Would you like your password to contain lowercase characters?");
+
       var confirmUp = window.confirm("Would you like your password to contain uppercase chracters?");
+
     };
 
   // alert user if no characters are chosen for password. Passwords will not be created with blanks or spaces.
@@ -105,18 +119,23 @@ var writePassword = function() {
   else if (confirmUp) {
     choices = upChar;
   }
+  // pwText.value = password;
 
-  // passwordText.value = password;
-
-// for loop
+// for loop 
 var writePassword = function() {
- for (i = 0; i <length; i++) {
-    userPass = (passwordText(Math.Floor)(Math.random() * length));
-    console.log(writePassword);
-    console.log(passwordText);
-  }
-}
 
+  password ='';
+
+ for (i = 0; i <length; i++) {
+    var pw = (pwText(Math.Floor)(Math.random() * length));
+    console.log(writePassword);
+    console.log(pwText);
+  }
+  console.log(writePassword);
+  console.log(pwText);
+  console.log(pw);
+  console.log(password);
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 }
