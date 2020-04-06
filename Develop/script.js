@@ -17,15 +17,15 @@ function writePassword() {
 
   pwText.value = password;
 
-  var length = parseInt(window.prompt("How long would you like your password to be? Enter a number between 8 and 128."));
+  var pwlength = parseInt(window.prompt("How long would you like your password to be? Enter a number between 8 and 128."));
 
     // alert user if nothing is entered into password length prompt
-    if (!length) {
+    if (!pwlength) {
       window.alert("Your password must have a length between 8 and 128. Please try again.");
     }
 
-    else if (length < 8 || length > 128) {
-      length = parseInt(window.prompt("You must choose between 8 and 128"));
+    else if (pwlength < 8 || pwlength > 128) {
+      pwlength = parseInt(window.prompt("You must choose between 8 and 128"));
     }
 
     // series of confirmations for each of the four types of characters
@@ -128,8 +128,8 @@ function writePassword() {
 var generatePassword = function() {
 
 // multiply by length from prompt in function
- for (i = 0; i < length; i++) {
-    pw = (pwText(Math.floor)(Math.random() * length));
+ for (i = 0; i < pwlength; i++) {
+    pw = (pwText(Math.floor)(Math.random() * pwlength));
   }
 
 // Add event listener to generate button
