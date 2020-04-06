@@ -11,7 +11,7 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
 
-  var password = '';
+  var password = generatePassword;
 
   var pwText = document.querySelector("#password");
 
@@ -119,23 +119,19 @@ function writePassword() {
   else if (confirmUp) {
     choices = upChar;
   }
-  // pwText.value = password;
-
-// for loop 
-var writePassword = function() {
 
   password ='';
 
- for (i = 0; i <length; i++) {
-    var pw = (pwText(Math.Floor)(Math.random() * length));
-    console.log(writePassword);
-    console.log(pwText);
-  }
-  console.log(writePassword);
-  console.log(pwText);
-  console.log(pw);
-  console.log(password);
 }
+
+// for loop 
+var generatePassword = function() {
+
+// multiply by length from prompt in function
+ for (i = 0; i < length; i++) {
+    pw = (pwText(Math.floor)(Math.random() * length));
+  }
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 }
